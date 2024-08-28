@@ -2,5 +2,21 @@
 {% load static %}
 
 {% block content %}
-    SERVICIOS
+    {% for servicio in servicios %}
+    <table border="1">
+        <tr>
+           <td>
+            <h3>{{ servicio.titulo }}</h3>    
+           </td> 
+           <td rowspan="2">
+            <img src="{{ servicio.imagen.url }}" width="300px" >    
+           </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>{{ servicio.contenido }}</h4>    
+               </td>
+        </tr>
+    </table>        
+    {% endfor %}
 {% endblock %}
